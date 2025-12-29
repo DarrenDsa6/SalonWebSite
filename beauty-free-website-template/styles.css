@@ -1,0 +1,818 @@
+/*--------------------------------------------------------------
+/** 1. VARIABLES
+--------------------------------------------------------------*/
+:root {
+    --accent-color: #2E86AB; /* A vibrant blue for accents */
+    --secondary-color: #6BB1C1; /* A softer blue for secondary elements */
+    --black-color: #1C2A33; /* A deep navy for headings */
+    --light-black-color: #2C3E50; /* A muted navy for secondary text */
+    --dark-color: #4A4A4A; /* A neutral dark gray */
+    --primary-color: #2E86AB; /* Matching the accent color */
+    --primary-color-200: #A8DADC; /* A light blue for backgrounds */
+    --primary-color-400: #6BB1C1; /* A medium blue for highlights */
+    --gray-color: #A8A8A8; /* Light gray for subtle elements */
+    --light-color: #F0F8FF; /* A soft, light blue for backgrounds */
+  
+    --bs-dark-rgb: 28, 42, 51;
+    --bs-gray-100: #E0F2F7; /* Light blue-gray for backgrounds */
+    --bs-gray-300: #B0C4DE; /* Medium blue-gray for borders */
+    --bs-primary-text-emphasis: var(--primary-color);
+    --bs-primary: #2E86AB;
+    --bs-light-rgb: 240, 248, 255;
+    --bs-primary-rgb: 46, 134, 171;
+    --bs-secondary-rgb: 107, 177, 193;
+    --swiper-theme-color: #2E86AB !important;
+    --cadet-blue-color: #5F9EA0; /* A muted teal for accents */
+  }
+  
+  /* Fonts */
+  :root {
+    --heading-font: "Merriweather", serif; /* Elegant serif font */
+    --body-font: "Open Sans", sans-serif; /* Clean, modern sans-serif font */
+  }
+  
+  /*----------------------------------------------*/
+  /* 2 GENERAL TYPOGRAPHY
+  /*----------------------------------------------*/
+  
+  /* 2.1 General Styles
+  /*----------------------------------------------*/
+  body {
+    background-color: var(--light-color);
+    font-family: var(--body-font);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    color: var(--dark-color);
+    margin: 0;
+  }
+  
+  p {
+    color: var(--dark-color);
+    font-weight: 300;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /*--------------------------------------------------------------
+  /** 2.3 Section
+  --------------------------------------------------------------*/
+  /* - Section Padding
+  --------------------------------------------------------------*/
+  .padding-small {
+    padding-top: 8.125em;
+    padding-bottom: 8.125em;
+  }
+  
+  .heading {
+    background-color: var(--black-color);
+    color: var(--light-color);
+  }
+  
+  .padding-medium {
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
+  
+  .padding-large {
+    padding-top: 12em;
+    padding-bottom: 12em;
+  }
+  
+  /* - Section Margin
+  --------------------------------------------------------------*/
+  .margin-small {
+    margin-top: 8.125em;
+    margin-bottom: 8.125em;
+  }
+  
+  .margin-medium {
+    margin-top: 10em;
+    margin-bottom: 10em;
+  }
+  
+  .margin-large {
+    margin-top: 12em;
+    margin-bottom: 12em;
+  }
+  
+  /* CSS for the fixed header */
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--light-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the navbar inside the header */
+  .navbar {
+    position: relative;
+    z-index: 1020;
+  }
+  
+  /* Add padding to the body or sections to prevent content from being hidden under the header */
+  body {
+    padding-top: 120px;
+  }
+  
+  /* Optional: Smooth scrolling effect for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optional: Style for the hero section or additional header content */
+  .hero-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--light-color);
+  }
+  
+  #header.scrolled {
+    background-color: rgba(240, 248, 255, 0.9);
+  }
+  
+  /* - Section Title
+  --------------------------------------------------------------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--black-color);
+    font-family: var(--heading-font);
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  
+  /* - Content width
+  --------------------------------------------------------------*/
+  .container-md {
+    max-width: 1465px;
+  }
+  
+  .container-lg {
+    max-width: 1750px;
+  }
+  
+  /*--------------------------------------------------------------
+  /** 2.4 Buttons
+  --------------------------------------------------------------*/
+  
+  .btn {
+    padding: 15px 35px;
+    text-transform: uppercase;
+    transition: 0.4s ease-in-out;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+  }
+  
+  /* Primary Buttons */
+  .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--accent-color);
+    --bs-btn-border-color: var(--accent-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #1C6A8E;
+    --bs-btn-hover-border-color: #1C6A8E;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #1C6A8E;
+    --bs-btn-active-border-color: #1C6A8E;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #1C6A8E;
+    --bs-btn-disabled-border-color: #1C6A8E;
+  }
+  
+  .btn-outline-primary {
+    --bs-btn-color: var(--accent-color);
+    --bs-btn-border-color: var(--accent-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--accent-color);
+    --bs-btn-hover-border-color: var(--accent-color);
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--accent-color);
+    --bs-btn-active-border-color: var(--accent-color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--accent-color);
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--accent-color);
+    --bs-gradient: none;
+  }
+  
+  .btn-check:active+.btn-primary:focus,
+  .btn-check:checked+.btn-primary:focus,
+  .btn-primary.active:focus,
+  .btn-primary:active:focus,
+  .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+  }
+  
+  /*--------------------------------------------------------------
+  /** 3.CONTENT ELEMENTS
+  --------------------------------------------------------------*/
+  
+  /* Dropdown
+  ------------------------------------------------------------- */
+  .dropdown-item {
+    color: var(--black-color);
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .dropdown-item.active,
+  .dropdown-item:active {
+    color: var(--bs-dropdown-link-hover-color);
+    text-decoration: none;
+    background-color: var(--bs-dropdown-link-hover-bg);
+  }
+  
+  /* Breadcrumb
+  ------------------------------------------------------------- */
+  .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--light-color);
+  }
+  
+  /* Form
+  ------------------------------------------------------------- */
+  .form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: none;
+  }
+  
+  .form-check-input:focus {
+    border-color: var(--accent-color);
+    outline: 0;
+    box-shadow: none;
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    border-color: var(--dark-color);
+    outline: 0;
+    box-shadow: none;
+  }
+  
+  input,
+  select,
+  textarea {
+    border-color: var(--dark-color);
+    outline: 0;
+    box-shadow: none;
+  }
+  
+  select:focus {
+    box-shadow: none;
+  }
+  
+  /* Svg Color
+  ------------------------------------------------------------- */
+  svg.light-color {
+    color: var(--light-color);
+  }
+  
+  svg.dark-color {
+    color: var(--dark-color);
+  }
+  
+  svg.light-blue-color {
+    color: #5BC4F1;
+  }
+  
+  svg.primary-color {
+    color: var(--primary-color);
+  }
+  
+  svg.accent-color {
+    color: var(--accent-color);
+  }
+  
+  svg.primary-color-500 {
+    color: var(--bs-primary-rgb);
+  }
+  
+  /* Swiper
+  ------------------------------------------------------------- */
+  .swiper-pagination {
+    position: unset !important;
+    padding-top: 45px;
+  }
+  
+  .swiper-pagination span.swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+    background-color: var(--accent-color);
+    opacity: 0.2;
+  }
+  
+  .swiper-pagination span.swiper-pagination-bullet:hover,
+  .swiper-pagination span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--accent-color);
+    opacity: 1;
+  }
+  
+  /* -Zoom Effect
+  ------------------------------------------*/
+  .zoom-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .zoom-effect img {
+    max-width: 100%;
+    transition: 0.6s ease-out;
+  }
+  
+  .zoom-effect:hover img {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .zoom-effect:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  
+  .zoom-effect:hover:before {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  /* ------ Pagination ------*/
+  .pagination {
+    --bs-pagination-padding-x: 0.75rem;
+    --bs-pagination-padding-y: 0.375rem;
+    --bs-pagination-font-size: 1rem;
+    --bs-pagination-color: var(--bs-body-color);
+    --bs-pagination-bg: var(--bs-body-bg);
+    --bs-pagination-border-width: 0;
+    --bs-pagination-border-color: var(--bs-border-color);
+    --bs-pagination-border-radius: 0;
+    --bs-pagination-hover-color: var(--bs-light);
+    --bs-pagination-hover-bg: var(--bs-primary);
+    --bs-pagination-hover-border-color: var(--bs-border-color);
+    --bs-pagination-focus-color: var(--bs-light);
+    --bs-pagination-focus-bg: var(--bs-primary);
+    --bs-pagination-focus-box-shadow: none;
+    --bs-pagination-active-color: var(--bs-light);
+    --bs-pagination-active-bg: var(--bs-primary);
+    --bs-pagination-active-border-color: var(--bs-primary);
+    --bs-pagination-disabled-color: var(--bs-primary-color);
+    --bs-pagination-disabled-bg: var(--bs-primary-bg);
+    --bs-pagination-disabled-border-color: var(--bs-border-color);
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  /*----------------------------------------------*/
+  /* 4 SITE STRUCTURE */
+  /*----------------------------------------------*/
+  
+  /* 4.1 Header
+  /*----------------------------------------------*/
+  
+  a.nav-link {
+    font-family: var(--heading-font);
+    text-transform: capitalize;
+    color: var(--black-color);
+    font-size: 20px;
+  }
+  
+  a.nav-link:focus {
+    color: var(--accent-color);
+  }
+  
+  a.nav-link.active,
+  a.nav-link:hover {
+    color: var(--secondary-color) !important;
+    outline: none;
+  }
+  
+  #primary-header .dropdown .search::after {
+    content: none;
+  }
+  
+  #primary-header .search-dropdown .dropdown-menu {
+    width: 260px;
+  }
+  
+  #primary-header .search-dropdown .dropdown-menu input {
+    min-width: 100%;
+  }
+  
+  #primary-header .search-dropdown .dropdown-menu button {
+    padding: 0 12px;
+    min-height: -webkit-fill-available;
+    border-radius: 0.25rem;
+  }
+  
+  /* 4.2 Slider Section
+  /*----------------------------------------------*/
+  section#slider .banner-content {
+    width: 50%;
+  }
+  
+  section#slider .main-slider-button-next,
+  .main-slider-button-prev {
+    z-index: 111111;
+    height: fit-content;
+    opacity: 0.9;
+  }
+  
+  section#slider .main-slider-button-next.swiper-button-disabled,
+  .main-slider-button-prev.swiper-button-disabled {
+    opacity: 0.6;
+  }
+  
+  .banner-title {
+    color: #FFF;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.27);
+  }
+  
+  @media only screen and (max-width: 999px) {
+    section#slider .banner-content {
+      width: 66%;
+    }
+  }
+  
+  /* 4.3 Services Section
+  /*----------------------------------------------*/
+  
+  a.hover-color h4 {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  a.hover-color h4:hover {
+    color: var(--accent-color);
+  }
+  
+  /* 
+   4.4 About style
+  --------------------------------------------------------------*/
+  
+  /*---- video section style start ----*/
+  /* color box style */
+  div#cboxOverlay {
+    opacity: 0.8 !important;
+  }
+  
+  .video .video-player {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  iconify-icon.video-icon {
+    color: var(--bs-light);
+    border-radius: 6.25rem;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.4s ease-in-out;
+    animation: playAnimation 2s infinite alternate;
+  }
+  
+  @keyframes playAnimation {
+    0% {
+      font-size: 35px;
+    }
+  
+    100% {
+      font-size: 60px;
+    }
+  }
+  
+  /* 4.5 Popular Products
+  ------------------------------------------------------------- */
+  .product-item .btn-wishlist {
+    display: block;
+    z-index: 111;
+    position: absolute;
+    top: 10px;
+    padding: 6px 10px;
+    color: var(--bs-black);
+    background: var(--bs-white);
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  .product-item .btn-cart {
+    display: block;
+    z-index: 111;
+    position: absolute;
+    top: 60px;
+    padding: 6px 10px;
+    color: var(--bs-black);
+    background: var(--bs-white);
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  .product-item:hover .btn-wishlist,
+  .product-item:hover .btn-cart {
+    opacity: 1;
+  }
+  
+  /* 4.6 Footer Section
+  /*----------------------------------------------*/
+  iconify-icon.social-icon {
+    font-size: 1.125rem;
+    padding: 0.75rem;
+    border-radius: 4.375rem;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    transition: all 0.5s ease;
+  }
+  
+  iconify-icon.social-icon:hover {
+    color: #FFF;
+    border: 1px solid var(--accent-color);
+    background: var(--accent-color);
+  }
+  
+  /*----------------------------------------------*/
+  /* 5 OTHER PAGES STYLE */
+  /*----------------------------------------------*/
+  
+  /* --------------------------------------------------------------
+  5.1 Faqs Page
+  /*----------------------------------------------*/
+  .accordion-button {
+    font-size: inherit;
+  }
+  
+  .accordion .accordion-button::after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 1.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='minus' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+    transform: rotate(0deg);
+  }
+  
+  /*--------------------------------------------------------------
+   5.2 Price Plan page style
+    --------------------------------------------------------------*/
+    .pricing-section {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+  }
+  
+  .pricing-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px var(--shadow-color);
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      width: 300px;
+  }
+  
+  .pricing-card:hover {
+      transform: translateY(-5px);
+  }
+  
+  .pricing-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+  }
+  
+  .price {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+  }
+  
+  .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+  }
+  
+  .pricing-features li {
+      font-size: 16px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--shadow-color);
+  }
+  
+  .pricing-features li:last-child {
+      border-bottom: none;
+  }
+  
+  .pricing-button {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--primary-color);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+      margin-top: 15px;
+  }
+  
+  .pricing-button:hover {
+      background: darkgreen;
+  }
+  
+
+.section-title {
+  margin-bottom: 40px; /* Space below the title */
+}
+
+.accordion-button {
+  background-color: #f8f9fa; /* Light background for buttons */
+  color: #333; /* Text color for buttons */
+  border: 1px solid #dee2e6; /* Border color */
+  border-radius: 0.25rem; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.accordion-button:hover {
+  background-color: #e2e6ea; /* Darker background on hover */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #2E86AB; /* Active button background */
+  color: white; /* Active button text color */
+}
+
+.accordion-body {
+  background-color: #ffffff; /* White background for body */
+  border: 1px solid #dee2e6; /* Border color */
+  border-top: none; /* No top border */
+  padding: 20px; /* Padding inside the body */
+}
+
+.accordion-item {
+  margin-bottom: 15px; /* Space between accordion items */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #price {
+      padding: 30px 0; /* Adjust padding for smaller screens */
+  }
+
+  .section-title {
+      margin-bottom: 30px; /* Space below the title */
+  }
+}
+  
+  /* --------------------------------------------------------------
+  5.3  Team page style
+  ------------------------------------------------------------- */
+  .team-member ul.social-links {
+    top: 0;
+  }
+  
+  .team-member ul li {
+    padding: 5px;
+    transform: rotatey(-90deg) perspective(100px);
+    transform-origin: left;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    background-color: var(--accent-color);
+  }
+  
+  .team-member ul li:first-of-type {
+    transition-delay: .3s;
+  }
+  
+  .team-member ul li:nth-of-type(2) {
+    transition-delay: 0.6s;
+  }
+  
+  .team-member ul li:nth-of-type(3) {
+    transition-delay: 0.9s;
+  }
+  
+  .team-member ul li:last-of-type {
+    transition-delay: 1.3s;
+  }
+  
+  .team-member:hover ul li {
+    transform: rotatey(0deg);
+  }
+  
+  /*--------------------------------------------------------------
+  5.4 Reviews page style
+  --------------------------------------------------------------*/
+  .reviews-components {
+    border: 1px solid var(--light-text-color);
+    box-shadow: 0px 12px 90px rgba(12, 12, 12, 0.06);
+    border-radius: 9px;
+  }
+  
+  iconify-icon.quote {
+    font-size: 60px;
+    color: var(--accent-color);
+  }
+  
+  .rate {
+    color: var(--accent-color);
+  }
+  
+  /*--------------------------------------------------------------
+  5.5 Single Product page style
+  --------------------------------------------------------------*/
+  
+  .nav-tabs .nav-link {
+    transition: all 0.1s ease-in;
+    border-radius: 0px;
+    color: var(--black-color);
+  }
+  
+  .nav-tabs .nav-link.show .nav-link,
+  .nav-tabs .nav-link.active {
+    background-color: transparent;
+    border-color: transparent;
+    transition: all 0.1s ease-in;
+    color: var(--bs-primary);
+  }
+  
+  .nav-tabs .nav-link:focus,
+  .nav-tabs .nav-link:hover {
+    color: var(--bs-primary);
+    isolation: isolate;
+    border-color: transparent;
+    transition: all 0.1s ease-in;
+  }
+  
+  /* product-thumbnail-slider */
+  .product-thumbnail-slider {
+    height: 600px;
+  }
+  
+  .product-box {
+    width: 25%;
+  }
+  
+  .product-info .color-product-options .color-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 1px solid var(--bs-gray);
+    padding: 1px;
+    border-radius: 50%;
+    margin: 0 3px;
+  }
+  
+  .product-info .color-product-options .color-item span {
+    border: 1px solid var(--bs-dark);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .product-box {
+      width: 50%;
+    }
+  }
